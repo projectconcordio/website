@@ -1,0 +1,153 @@
+---
+layout: home
+id: home
+description: Visualize your Kubernetes workloads
+backgrounds:
+  case_study: med-blue
+  team: dark-blue
+hero:
+  banner: /img/heroes/hero-concord.svg
+  headline: Build a decentralized, energy-efficient, and trusted Blockchain infrastructure
+  content: Project Concord is a open source  generic state machine replication library that can handle malicious (byzantine) replicas, suitable to serve as the basis of permissioned Blockchain infrastructure.
+  cta_link1:
+    text: Download
+    url: https://github.com/vmware/concord
+  promo1:
+    icon: /img/icon-fault-tolerant.svg
+    #url: http://www.example.com?box1
+    title:  Byzantine Fault Tolerant
+    content: Project Concord has a highly scalable byzantine fault tolerant consensus engine at its core with security being a critical element.
+  promo2:
+    icon: /img/icon-high-performance.svg
+    #url: http://www.example.com?box2
+    title: High Performance
+    content: Project Concord has scalability and performance built into the engine.
+  promo3:
+    icon: /img/icon-energy-efficient.svg
+    #url: http://www.example.com?box3
+    title: Energy Efficient
+    content: With Project Concord’s low CPU and byzantine fault tolerant core energy waste and high CO2 usage is left to legacy blockchain engines.
+secondary_ctas:
+  cta1:
+    title: Introduction to Concord
+    url: https://blogs.vmware.com/opensource/2018/08/28/meet-project-concord/ 
+    content: Learn about Concord to see how it can be used to build  decentralized trust Blockchain
+  cta2:
+    title: How do you use Concord?
+    url: /developer
+    content: See how Project Concord can be used to build your own Blockchain.
+---
+<div class="home-hero bg-color-{{ site.hero.background-color }}" style="background-image: url('{{ page.hero.banner }}')">
+  <div class="section">
+    <div class="section-content">
+      <div class="hero-content">
+        <h1 class="mb-3">{{ page.hero.headline }}</h1>
+        <p>{{ page.hero.content }}</p>        
+      </div>
+      <div class="hero-cta mt-4">
+        <a href="{{ page.hero.cta_link1.url }}" class="btn btn-primary mb-3 mb-sm-0">{{ page.hero.cta_link1.text }}</a>
+        {% if page.hero.cta_link2.url.size > 0 %}
+        <a href="{{ page.hero.cta_link2.url }}" class="btn btn-outline-light">{{ page.hero.cta_link2.text }}</a>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+</div> <!-- /home-hero -->
+<div class="section section-card section-card-offset-top promo-cards">
+  <div class="section-content">
+    <div class="row">
+      <div class="col-md">
+        <div class="card card-light mb-3 mb-md-0 shadow-sm">
+          <div class="card-body match-height">
+            <figure>
+              <img src="{{ page.hero.promo1.icon }}" alt="{{ page.hero.promo1.title }}" />
+            </figure>
+            {% if page.hero.promo1.url.size > 0 %}
+            <h5><a href="{{ page.hero.promo1.url }}" class="dark">{{ page.hero.promo1.title }}</a></h5>
+            {% else %}
+            <h5>{{ page.hero.promo1.title }}</h5>
+            {% endif %}
+            <p>{{ page.hero.promo1.content }}</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md">
+        <div class="card card-light mb-3 mb-md-0 shadow-sm">
+          <div class="card-body match-height">
+            <figure>
+              <img src="{{ page.hero.promo2.icon }}" alt="{{ page.hero.promo2.title }}" />
+            </figure>
+            {% if page.hero.promo2.url.size > 0 %}
+            <h5><a href="{{ page.hero.promo2.url }}" class="dark">{{ page.hero.promo2.title }}</a></h5>
+            {% else %}
+            <h5>{{ page.hero.promo2.title }}</h5>
+            {% endif %}
+            <p>{{ page.hero.promo2.content }}</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md">
+        <div class="card card-light mb-3 mb-md-0 shadow-sm">
+          <div class="card-body match-height">
+            <figure>
+              <img src="{{ page.hero.promo3.icon }}" alt="{{ page.hero.promo3.title }}" />
+            </figure>
+            {% if page.hero.promo3.url.size > 0 %}
+            <h5><a href="{{ page.hero.promo3.url }}" class="dark">{{ page.hero.promo3.title }}</a></h5>
+            {% else %}
+            <h5>{{ page.hero.promo3.title }}</h5>
+            {% endif %}
+            <p>{{ page.hero.promo3.content }}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="section section-grey">
+  <div class="section-content">
+    <div class="row bg-grey">
+      <div class="col-sm-5 mb-3 mb-sm-0">
+        <h6 class="mb-1">
+          <a href="{{ page.secondary_ctas.cta1.url }}">{{ page.secondary_ctas.cta1.title }}</a>
+        </h6>
+        <p class="mb-0">{{ page.secondary_ctas.cta1.content }}</p>
+      </div>
+      <div class="col-sm-5 offset-sm-2">
+        <h6 class="mb-1">
+          <a href="{{ page.secondary_ctas.cta2.url }}">{{ page.secondary_ctas.cta2.title }}</a>
+        </h6>
+        <p class="mb-0">{{ page.secondary_ctas.cta2.content }}</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="section">
+  <div class="section-content">
+    <div class="row">
+      <div class="col">
+        <h2>Features</h2>
+      </div>          
+    </div>
+    {% assign limit = 3 %}
+    {% include case-studies-alternating.html %}
+  </div>
+</div>
+
+<div class="section pt-3">
+  <div class="section-content">
+    <div class="row">
+      <div class="col">
+        <h2>Learn</h2>
+      </div>
+    </div>
+    {% assign limit = 3 %}
+    {% include blog-posts.html %}
+    <div class="row pt-5">
+      <div class="col text-center">
+        <a href="/blog" class="btn btn-secondary btn-sm">See All Posts</a>
+      </div>
+    </div>
+  </div>
+</div>

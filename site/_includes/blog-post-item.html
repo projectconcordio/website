@@ -1,0 +1,17 @@
+{% if post.external %}
+  {% assign post_url = post.external %}
+  {% assign target = "_blank" %}
+{% else %}
+  {% capture post_url %}{{ site.baseurl }}{{ post.url }}{% endcapture %}
+  {% assign target = "_self" %}
+{% endif %}
+<div class="row my-4">
+  <div class="col col-md-6 blog-post-item">
+    <h2>
+      <a href="{{ post_url }}" target="{{ target }}">
+      <span class="date">{{ post.date | date: "%Y/%b/%d" }}</span>
+      {{ post.title }}
+      </a>
+    </h2>
+  </div>
+</div>

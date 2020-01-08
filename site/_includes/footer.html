@@ -1,0 +1,34 @@
+<footer class="section site-footer">
+    <div class="section-content">
+        <div class="row justify-content-between align-items-center">
+            <div class="col-12 col-md-5 mb-3 mb-md-0">
+                <ul class="social-links text-center text-md-left">
+                    {% for link in site.footer_social_links %}
+                    <li>
+                      {% if(link[1].fa_icon != false) %}
+                      <i class="{{ link[1].fa_icon }} fa-lg fa-fw mr-1"></i>
+                      {% endif %}
+                      <a href="{{ link[1].url }}">{{ link[0] }}</a></li>
+                    {% endfor %}
+                </ul>
+            </div>
+            <div class="col-12 col-md-7 text-center text-md-right">
+              <small>&copy; 2019.</small> <a href="{{ site.footer.vm-link }}" class="vm-logo">A VMware-sponsored open source project.</a>
+              <a href="/" alt="Homepage"><img src="/img/{{ site.logo }}" class="logo" /></a>
+            </div>
+        </div>
+    </div>
+</footer>
+
+
+<!-- JS -->
+<script defer src="https://use.fontawesome.com/releases/v5.0.8/js/all.js" integrity="sha384-SlE991lGASHoBfWbelyBPLsUlwY1GwNDJo3jSJO04KZ33K2bwfV9YBauFfnzvynJ"
+    crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+    crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+    crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" crossorigin="anonymous"></script>
+
+<script src="/js/jquery.matchHeight.js?{{site.time | date: '%s%N'}}"></script>
+<script src="/js/scripts.js?{{site.time | date: '%s%N'}}"></script>

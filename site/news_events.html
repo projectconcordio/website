@@ -1,0 +1,54 @@
+---
+layout: default
+title: News & Events
+description: Project Concord News & Events
+past-title: "News &amp; Past Events"
+past:
+- date: 2019-11-13
+  label: Meet us at Blockchain Expo NA
+- date: 2019-11-05
+  label: Meet us at VMworld EU
+- date: 2019-09-05
+  label: "Meet us at VMworld SF"
+- date: 2019-08-01
+  label: Linux Foundation in SD
+future-title: "Upcoming Events"
+future:
+- date: 2020-02-04
+  label: "Explore adopting open source Project Concord at Odyssey Connect"
+  url: "https://connect.odyssey.org/"
+- date: 2019-04-03
+  label: "Use open source Project Concord at Odyssey Connect"
+  url: "https://www.odyssey.org/hackathon-2020-vmware-daml-challenge-from-plastic-pollution-to-upcycling-economy/"
+id: news-events
+---
+
+<div class="row">
+  
+  {% if page.past %}
+  <div class="col-md-5">
+    <strong>{{ page.past-title }}</strong>
+    <ul class="link-list">
+    {% for event in page.past %}
+      <li>
+        {% include news-event-item.html %}
+      </li>
+    {% endfor %}
+    </ul>
+  </div>
+  {% endif %}
+  
+  {% if page.future %}
+  <div class="col-md-5">
+    <strong>{{ page.future-title }}</strong>
+    <ul class="link-list">
+    {% for event in page.future %}
+      <li>
+        {% include news-event-item.html %}
+      </li>
+    {% endfor %}
+    </ul>
+  </div>
+  {% endif %}
+  
+</div>

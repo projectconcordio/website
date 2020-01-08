@@ -1,0 +1,11 @@
+.blog-post-item {
+  h2 {
+    font-weight: $font-weight-light;
+    line-height: 24px;
+    span.date {
+      font-weight: $font-weight-medium;
+      display: block;
+    }
+    font-size: 16px;
+  }
+}
