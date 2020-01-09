@@ -1,0 +1,38 @@
+---
+layout: default
+title: Community
+description: Community Resources
+links:
+- title: Twitter
+  description: "Follow us at"
+  url: "https://www.twitter.com/@project_concord"
+  label: "@project_concord"
+  image: /img/twitter.svg
+- title: Google
+  description: "Join the discussion at"
+  url: "https://groups.google.com/forum/#!forum/projectconcord"
+  label: "https://groups.google.com/forum/#!forum/projectconcord"
+  image: /img/google.svg
+- title: Slack
+  description: "Chat with us at"
+  url: "https://concordbft.slack.com"
+  label: "concordbft.slack.com"
+  notes: "Get slack invitation via this link or send request to <a href='mailto:concordbft@gmail.com'>concordbft@gmail.com</a>"
+  image: /img/slack.svg
+id: community
+---
+
+<div class="row">
+  {% for link in page.links %}
+  <div class="col-md-4 community-item">
+    <div class="icon">
+      <a href="{{ link.url }}" target="_blank"><img src="{{ link.image }}" alt="{{ link.title}}"></a>  
+    </div>
+    <h3>{{link.title}}</h3>
+    <div class="link-description">
+      <p>{{ link.description }}: <a href="{{ link.url }}" target="_blank">{{ link.label }}</a></p>
+      <p>{{ link.notes }}</p>
+    </div>
+  </div>
+  {% endfor %}
+</div>

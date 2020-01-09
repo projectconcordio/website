@@ -1,0 +1,65 @@
+---
+layout: default
+title: Developer
+description: Developer Resources
+downloads:
+- title: "Concord-BFT: a Distributed Trust Infrastructure"
+  description: " For academics and researchers interesting in examining and contributing to the deep science of state machine replication library that can tolerate byzantime faults."
+  url: https://github.com/vmware/concord-bft
+  image: /img/concord-logo.svg
+- title: Concord
+  description: For both hands-on enthusiasts and developers to download and run your own local Concord Blockchain nodes, powered by Concord-BFT.
+  image: /img/concord-logo.svg
+  url: https://github.com/vmware/concord
+papers:
+- title: "Flexible Byzantine Fault Tolerance"
+  url: "https://research.vmware.com/publications/flexible-byzantine-fault-tolerance"
+- title: "SBFT: a Scalable Decentralized Trust Infrastructure for Blockchains"
+  url: "https://research.vmware.com/publications/sbft-a-scalable-decentralized-trust-infrastructure-for-blockchains"
+- title: "Synchronous Byzantine Agreement with Expected O(1) Rounds, Expected O(n^2) Communication, and Optimal Resilience"
+  url: "https://research.vmware.com/publications/synchronous-byzantine-agreement-with-expected-o-1-rounds-expected-o-n2-communication-and-optimal-resilience"
+id: developer
+---
+
+<div class="row">
+  {% for download in page.downloads %}
+  <div class="col-md-6 download">
+    <div class="row">
+      <div class="col">
+        <figure>
+          <img src="{{ download.image}}" alt=""/>
+          <figcaption>{{ download.title }}</figcaption>
+        </figure>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col">
+        <h3 class="subtitle">{{ download.title }}</h3>
+        <p>{{ download.description }}</p>
+      </div>
+    </div>
+    {% if download.url %}
+    <div class="row">
+      <div class="col">
+        <a href="{{ download.url }}" target="_blank" class="btn btn-primary">Download</a>
+      </div>
+    </div>
+    {% endif %}
+  </div>
+  {% endfor %}
+</div>
+
+{% if page.papers %}
+<div class="row mt-5">
+  <div class="col mb-3">
+    <strong>Research &amp; Development Papers</strong>
+  </div>
+</div>
+  {% for paper in page.papers %}
+    <div class="row">
+      <div class="col-md-8 mb-4">
+        <a href="{{ paper.url }}" target="_blank">{{ paper.title }}</a>
+      </div>
+    </div>
+  {% endfor %}
+{% endif %}

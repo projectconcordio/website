@@ -1,0 +1,10 @@
+  {% if event.url %}
+  <a href="{{ event.url }}" target="_blank">
+  {% endif %}
+    {% if event.date %}
+    <strong>{{ event.date | date: "%Y/%b/%d" }}</strong>:
+    {% endif %}
+    {{ event.label }}
+  {% if event.url %}
+  </a>
+  {% endif %}

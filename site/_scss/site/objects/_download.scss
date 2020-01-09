@@ -1,0 +1,14 @@
+.download {
+  margin-top: 40px;
+  figure {
+    margin-bottom: 25px;
+    img {
+      max-width: 100%;
+    }
+    figcaption {
+      margin-top: 15px;
+      font-size: .75rem;
+      font-weight: $font-weight-bold;
+    }    
+  }
+}
